@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "Shield",
+    "title": "Static Security Services",
+    "description": "Professional, well-trained security officers deployed at offices, banks, factories, schools, hospitals, hotels, and residential complexes to ensure controlled access, continuous monitoring, and safe premises.",
+    "accent": "gold-gradient"
+  },
+  {
+    "icon": "Car",
+    "title": "Mobile Patrol Services",
+    "description": "Regular patrols conducted by trained security teams to prevent theft, unauthorized access, and suspicious activity while maintaining strong perimeter security.",
+    "accent": "warm-gradient"
+  },
+  {
+    "icon": "Calendar",
+    "title": "Event Security Management",
+    "description": "Comprehensive crowd control and safety management for corporate events, weddings, exhibitions, sports events, and public gatherings with strict access control.",
+    "accent": "gold-gradient"
+  },
+  {
+    "icon": "UserCheck",
+    "title": "VIP & Close Protection",
+    "description": "Dedicated personal security services for business leaders, VIPs, and high-profile individuals to ensure safe travel, movement, and protection.",
+    "accent": "warm-gradient"
+  }
+]

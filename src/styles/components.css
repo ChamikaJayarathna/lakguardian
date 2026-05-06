@@ -1,0 +1,68 @@
+@layer components {
+  .glass-card {
+    @apply bg-linear-to-br from-secondary/60 to-secondary/30 backdrop-blur-xl border border-border/50;
+  }
+
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-warm-gradient {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .bg-gradient-contact-transparent {
+    background: linear-gradient(
+      to top,
+      hsla(var(--background), 0.5) 0%,
+      transparent 100%
+    );
+  }
+
+  .contact-map__iframe {
+    border: 0;
+    filter: invert(90%) hue-rotate(180deg);
+  }
+
+  .contact-form__status {
+    @apply flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium;
+  }
+
+  .contact-form__status--success {
+    @apply bg-green-500/10 text-green-400 border border-green-500/20;
+  }
+
+  .contact-form__status--error {
+    @apply bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+}
