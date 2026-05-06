@@ -5,7 +5,7 @@ const AboutUs = lazy(() => import("@/components/AboutUs"));
 const MissionVision = lazy(() => import("@/components/MissionVision"));
 const Founder = lazy(() => import("@/components/Founder"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
+const ContactUs = lazy(() => import("@/components/ContactUs"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
@@ -24,7 +24,7 @@ const Index = () => {
         <MissionVision />
         <Founder />
         <ServicesSection />
-        <ContactSection />
+        <ContactUs />
         <Footer />
       </Suspense>
     </div>

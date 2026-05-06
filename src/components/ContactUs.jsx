@@ -5,7 +5,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 
-const ContactSection = () => {
+const ContactUs = () => {
   const [status, setStatus] = useState({ type: null, message: "" });
   const [isSending, setIsSending] = useState(false);
 
@@ -185,4 +185,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default ContactUs;
