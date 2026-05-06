@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { AlertCircle, CheckCircle, Send } from "lucide-react";
 import { contactInfo, contactMap } from "@/data/contact.data";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { fadeUp, slideLeft, slideRight, VIEWPORT } from "@/lib/animations";
 
 const ContactUs = () => {
   const [status, setStatus] = useState({ type: null, message: "" });
@@ -49,18 +51,30 @@ const ContactUs = () => {
   return (
     <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          variants={fadeUp}
+        >
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
             Get In Touch
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3">
             Send Request
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="glass-card rounded-2xl p-8 lg:p-10">
+          <motion.div
+            className="glass-card rounded-2xl p-8 lg:p-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            variants={slideLeft}
+          >
             <form className="space-y-6" onSubmit={onSubmit}>
               <div>
                 <label
@@ -121,23 +135,29 @@ const ContactUs = () => {
                 {isSending ? "Sending…" : "Send Message"}
               </Button>
 
-              {status.type && (
+              {status?.type && (
                 <div
-                  className={`contact-form__status contact-form__status--${status.type}`}
+                  className={`contact-form__status contact-form__status--${status?.type}`}
                 >
-                  {status.type === "success" ? (
+                  {status?.type === "success" ? (
                     <CheckCircle className="w-5 h-5 shrink-0" />
                   ) : (
                     <AlertCircle className="w-5 h-5 shrink-0" />
                   )}
-                  <span>{status.message}</span>
+                  <span>{status?.message}</span>
                 </div>
               )}
             </form>
-          </div>
+          </motion.div>
 
           {/* Map & Contact Info */}
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            variants={slideRight}
+          >
             <div className="glass-card rounded-2xl overflow-hidden h-64 relative">
               <iframe
                 title={contactMap?.title}
@@ -178,7 +198,7 @@ const ContactUs = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

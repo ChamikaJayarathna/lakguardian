@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { Shield, Car, Calendar, UserCheck } from "lucide-react";
 import servicesData from "@/data/services_data.json";
+import { fadeUp, staggerContainer, VIEWPORT } from "@/lib/animations";
 
 const iconMap = { Shield, Car, Calendar, UserCheck };
 
@@ -8,7 +10,13 @@ const ServicesSection = () => {
     <section id="services" className="py-24 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          variants={fadeUp}
+        >
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
             What We Do
           </span>
@@ -19,17 +27,24 @@ const ServicesSection = () => {
             From static guarding to VIP protection, Lakguardian delivers trusted
             security solutions tailored to your needs.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          variants={staggerContainer}
+        >
           {servicesData?.map((service, index) => {
             const Icon = iconMap[service?.icon];
 
             return (
-              <div
+              <motion.div
                 key={index}
                 className="group glass-card rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-gold cursor-pointer relative overflow-hidden"
+                variants={fadeUp}
               >
                 <div
                   className={`absolute top-0 right-0 w-24 h-24 ${service?.accent} opacity-5 rounded-bl-full group-hover:opacity-10 transition-opacity duration-500`}
@@ -52,10 +67,10 @@ const ServicesSection = () => {
                     {service?.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
