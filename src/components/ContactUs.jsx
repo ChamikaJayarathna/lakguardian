@@ -129,7 +129,7 @@ const ContactUs = () => {
                 type="submit"
                 size="lg"
                 disabled={isSending}
-                className="w-full gold-gradient text-primary-foreground font-semibold shadow-gold hover:opacity-90 transition-opacity h-14 text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full gold-gradient text-primary-foreground font-semibold shadow-gold hover:opacity-90 transition-opacity h-14 text-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
               >
                 <Send className="w-5 h-5 mr-2" />
                 {isSending ? "Sending…" : "Send Message"}
